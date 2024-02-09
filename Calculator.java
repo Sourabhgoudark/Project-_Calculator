@@ -1,19 +1,20 @@
 package java2;
+
 import java.util.Scanner;
 
 public class Calculator extends Extend1 {
     public static void main(String[] args) {
 
         char operator;
-        Double number1, number2, result;
+        double number1, number2, result;
 
         // create an object of Scanner class
         Scanner input = new Scanner(System.in);
 
         // ask users to enter operator
-        System.out.println("Choose an operator: +, -, *, or /");
-        System.out.println("M:module\tP:power\t S:square");
+        System.out.println("Choose an operator: +, -, *, /, M, X, A, S, L, E");
         operator = input.next().charAt(0);
+
         // ask users to enter numbers
         System.out.println("Enter first number");
         number1 = input.nextDouble();
@@ -22,40 +23,68 @@ public class Calculator extends Extend1 {
         number2 = input.nextDouble();
 
         switch (operator) {
-
-            // performs addition between numbers
             case '+':
                 result = number1 + number2;
                 System.out.println(number1 + " + " + number2 + " = " + result);
                 break;
 
-            // performs subtraction between numbers
             case '-':
                 result = number1 - number2;
                 System.out.println(number1 + " - " + number2 + " = " + result);
                 break;
 
-            // performs multiplication between numbers
             case '*':
                 result = number1 * number2;
                 System.out.println(number1 + " * " + number2 + " = " + result);
                 break;
 
-            // performs division between numbers
             case '/':
-                result = number1 / number2;
-                System.out.println(number1 + " / " + number2 + " = " + result);
+                if (number2 != 0) {
+                    result = number1 / number2;
+                    System.out.println(number1 + " / " + number2 + " = " + result);
+                } else {
+                    System.out.println("Division by zero is not allowed!");
+                }
                 break;
-            case 'S':
-                System.out.println("The square of "+number1+" is: " + Extend1.Square(number1));
-                System.out.println("The square of "+number2+" is: " + Extend1.Square(number2));
-                break;
-            case 'P':
-                System.out.println(number1 + " ^ " + number2 + " = " + Extend1.Power(number1, number1));
-                break;
+
             case 'M':
-                System.out.println(number1 + " % " + number2 + " = "  + Extend1.Modulo(number1.intValue(), number2.intValue()));
+                result = Min((int) number1, (int) number2);
+                System.out.println("Minimum of " + number1 + " and " + number2 + " is " + result);
                 break;
+
+            case 'X':
+                result = Max((int) number1, (int) number2);
+                System.out.println("Maximum of " + number1 + " and " + number2 + " is " + result);
+                break;
+
+            case 'A':
+                result = Absolute((int) number1);
+                System.out.println("Absolute value of " + number1 + " is " + result);
+                break;
+
+            case 'S':
+                if (number1 >= 0) {
+                    result = SquareRoot(number1);
+                    System.out.println("Square root of " + number1 + " is " + result);
+                } else {
+                    System.out.println("Square root of a negative number is not defined.");
+                }
+                break;
+
+            case 'L':
+                if (number1 > 0) {
+                    result = Logarithm(number1);
+                    System.out.println("Logarithm of " + number1 + " is " + result);
+                } else {
+                    System.out.println("Logarithm of a non-positive number is not defined.");
+                }
+                break;
+
+            case 'E':
+                result = Exponential(number1);
+                System.out.println("Exponential function of " + number1 + " is " + result);
+                break;
+
             default:
                 System.out.println("Invalid operator!");
                 break;
