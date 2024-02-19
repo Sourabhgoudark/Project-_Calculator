@@ -1,15 +1,11 @@
 package java2;
 
 public class Extend1 {
-    public static double Square(double x) {
+    public static int Square(int number1) {
         return x * x;
     }
 
-    public static double Modulo(double x, double y) {
-        return x % y;
-    }
-
-    public static double Power(double x, double y) {
-        return (int) Math.pow(x, y);
+    public static int cube (int number1) {
+        return x * x * x;
     }
 }
