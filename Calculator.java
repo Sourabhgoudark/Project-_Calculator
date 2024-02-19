@@ -11,7 +11,7 @@ public class Calculator extends Extend1 {
                     System.out.println(number1 + " * " + number2 + " = " + result);
                     result = number1 / number2;
                     System.out.println(number1 + " / " + number2 + " = " + result);
-            square(number1);
+            Square(number1);
             cube(number1);
               }
 }
