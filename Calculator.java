@@ -7,23 +7,14 @@ public class Calculator {
             Double number1, number2, result;
             number1=20;
             number2=10;
-            result = number1 + number2;
-            System.out.println(number1 + " + " + number2 + " = " + number1+number2);
-           
+                    result = number1 + number2;
+                    System.out.println(number1 + " + " + number2 + " = " + result);
                     result = number1 - number2;
                     System.out.println(number1 + " - " + number2 + " = " + result);
-                    
-
-                
                     result = number1 * number2;
                     System.out.println(number1 + " * " + number2 + " = " + result);
-                    
-
-                
                     result = number1 / number2;
                     System.out.println(number1 + " / " + number2 + " = " + result);
-                    
-
-    }
+              }
 }
 
